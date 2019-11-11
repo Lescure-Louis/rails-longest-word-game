@@ -1,0 +1,14 @@
+<h2><% if @correct == false %>
+  <h1>Sorry... </h1>
+  <%= "#{@word} cannot be built out of" %> <% @letters.each do |letter| %>
+  <%=letter%>
+    <% end %>
+<% elsif @exists == false %>
+  <%= "Sorry... #{@word} is not a valid english word." %>
+  <% else %>
+  <h1>Congratulation!</h1>
+  <%= "#{@word} is a valid English word! You scored #{@score} points this round" %>
+  <% end %>
+</p>
+<p>Your score: <%= @total_score %></p>
+<p class="btn btn-light"><%= link_to "Try Again", new_path %></p>
